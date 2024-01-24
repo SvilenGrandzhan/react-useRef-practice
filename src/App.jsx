@@ -1,9 +1,13 @@
-import "./App.css";
+import { useRef } from "react";
+import ComponentA from "./ComponentA";
+import ComponentB from "./ComponentB";
 
 function App() {
+  const elementRef = useRef();
   return (
     <>
-      <section>new Section</section>
+      <ComponentA elRef={elementRef} />
+      <ComponentB getRefFrom={elementRef} />
     </>
   );
 }
